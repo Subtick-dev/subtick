@@ -275,8 +275,6 @@ print(result)
 | GET    | `/v1/account/:addr`  | balance + nonce                      |
 | WS     | `/v1/events`         | `BatchExecuted` stream + `Lagged`    |
 
-Full contract: [`subtick/API.md`](subtick/API.md).
-
 ---
 
 ## Known limits

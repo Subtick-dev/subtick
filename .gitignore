@@ -30,10 +30,13 @@ demo_node/
 *.jsonl
 endurance_*.log
 
-# Internal-only docs (not for public repo)
+# Internal-only — never commit (chain core + internal specs are private)
+/subtick/
+/docs/
 LAUNCH.md
 MASTER PLAN.md
 baseline_*.txt
+.git.backup-*/
 
 # Keys (operator-only — never commit)
 *.key

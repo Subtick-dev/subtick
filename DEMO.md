@@ -239,7 +239,7 @@ pkill -f "node run.js"; pkill -f "event-monitor"; pkill -x subtick
 | Cross-shard recipient lands in sender's shadow | Same delta, same shard commit thread |
 | No auth / rate-limit on API          | Locked v0 contract — deliberate           |
 | No historical queries / pagination   | Locked v0 contract — deliberate           |
-| Single validator (quorum = 1)        | Demo solo; multi-host scripts in `subtick/` |
+| Single validator (quorum = 1)        | Demo solo                                 |
 | `permissive` CORS                    | Demo only — lock down for prod            |
 
 Core system is real:
@@ -277,8 +277,8 @@ Logs to inspect:
 
 Per the master plan, **Phase 3 = Public Testnet**:
 
-- Same binary on N nodes (use `subtick/run_multihost_validators.sh` as a starting point)
-- `subtick genesis --validators N` for a multi-validator genesis
+- Same binary on N nodes
+- Multi-validator genesis
 - Open the API on each node behind a load balancer
-- Publish [API.md](subtick/API.md) + the SDK READMEs
+- Publish API reference + the SDK READMEs
 - Invite developers

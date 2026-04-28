@@ -54,8 +54,6 @@ https://subtick.dev
 | GET    | `/v1/account/:addr`  | balance + nonce                |
 | WS     | `/v1/events`         | live execution stream          |
 
-Full reference: [`subtick/API.md`](subtick/API.md).
-
 ---
 
 ## SDKs
@@ -96,20 +94,6 @@ each holds 1 B units. Real Ed25519 signatures, real on-chain state, no mock.
 
 ---
 
-## Run a node yourself
-
-The same code that runs the public testnet runs locally. See
-[`TESTNET.md`](TESTNET.md) for the 4-validator orchestration scripts —
-boots a full network on a single box in under a minute.
-
-```bash
-./scripts/testnet/setup.sh
-./scripts/testnet/start-all.sh
-curl http://127.0.0.1:8080/health
-```
-
----
-
 ## Status
 
 | Layer            | Status   |
@@ -132,12 +116,10 @@ See [`TESTNET.md` § Known limits](TESTNET.md#known-limits) for the full list.
 
 ```
 .
-├── subtick/         validator + executor + API binary
 ├── sdk/js/          @subtick/sdk
 ├── sdk/python/      subtick-sdk
 ├── apps/game/       game-economy demo (real txs, terminal)
-├── apps/agents/     AI-agents-marketplace demo (real txs, terminal)
-└── scripts/testnet/ 4-validator orchestration scripts
+└── apps/agents/     AI-agents-marketplace demo (real txs, terminal)
 ```
 
 ---
@@ -154,20 +136,18 @@ Subtick uses an **open-core** model:
 
 | Tree                                 | License                        |
 |--------------------------------------|--------------------------------|
-| `subtick/` — chain core (validator, executor, API) | **Source-available, proprietary** ([LICENSE](LICENSE)) |
+| Chain core (validator, executor, API) | **Private — not in this repo** |
 | `sdk/js/` — `@subtick/sdk`           | MIT ([sdk/js/LICENSE](sdk/js/LICENSE))         |
 | `sdk/python/` — `subtick-sdk`        | MIT ([sdk/python/LICENSE](sdk/python/LICENSE)) |
 | `apps/game/`, `apps/agents/` — demos | MIT ([apps/game/LICENSE](apps/game/LICENSE), [apps/agents/LICENSE](apps/agents/LICENSE)) |
-| `scripts/` — testnet orchestration   | MIT ([scripts/LICENSE](scripts/LICENSE))       |
+| `scripts/`                           | MIT ([scripts/LICENSE](scripts/LICENSE))       |
 
-The chain core (`subtick/`) is **source-available and proprietary**. You
-may view, read, and study the code, but you may not use, modify, or
-distribute it — and you may not run it as a service or offer a competing
-chain — without prior written permission. The SDKs and demos are MIT so
-you can build on top of the public testnet freely.
-
-For commercial licensing of the chain core, contact the project owners.
+The chain core that powers `subtick.dev` is currently kept private. The
+SDKs and demo apps in this repository are MIT-licensed so you can build
+freely against the public testnet.
 
 > Subtick is in a stabilization phase. Parts of the core will be opened
-> progressively under more permissive licenses as the architecture
-> stabilizes and the experiments settle.
+> progressively under permissive licenses as the architecture stabilizes
+> and the experiments settle.
+
+For commercial licensing, contact the project owners.
