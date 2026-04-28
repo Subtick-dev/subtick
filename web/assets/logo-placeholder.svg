@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+  <!-- A "sub-tick" mark: a fast pulse that breaks the regular tick line.
+       Replace this whole file with the real logo when it lands. -->
+  <line x1="6"  y1="32" x2="22" y2="32" stroke-opacity="0.35" />
+  <line x1="42" y1="32" x2="58" y2="32" stroke-opacity="0.35" />
+  <path d="M22 32 L28 22 L34 42 L40 32" />
+</svg>
