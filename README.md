@@ -146,4 +146,17 @@ Try the demo → **[https://subtick.dev/demo](https://subtick.dev/demo)**
 
 If it feels fast, give it a ⭐
 
-License: MIT.
+---
+
+## License
+
+All code in this repository is released under the **MIT License**.
+
+| Tree                          | License | Notes                                  |
+|-------------------------------|---------|----------------------------------------|
+| `subtick/` (validator + API)  | MIT     | covered by root [`LICENSE`](LICENSE)   |
+| `sdk/js/`, `sdk/python/`      | MIT     | [`sdk/LICENSE`](sdk/LICENSE)           |
+| `apps/game/`, `apps/agents/`  | MIT     | [`apps/LICENSE`](apps/LICENSE)         |
+| `scripts/`                    | MIT     | [`scripts/LICENSE`](scripts/LICENSE)   |
+
+Use it, fork it, ship it. Attribution is appreciated.
