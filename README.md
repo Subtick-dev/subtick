@@ -150,13 +150,20 @@ If it feels fast, give it a ⭐
 
 ## License
 
-All code in this repository is released under the **MIT License**.
+Subtick uses an **open-core** model:
 
-| Tree                          | License | Notes                                  |
-|-------------------------------|---------|----------------------------------------|
-| `subtick/` (validator + API)  | MIT     | covered by root [`LICENSE`](LICENSE)   |
-| `sdk/js/`, `sdk/python/`      | MIT     | [`sdk/LICENSE`](sdk/LICENSE)           |
-| `apps/game/`, `apps/agents/`  | MIT     | [`apps/LICENSE`](apps/LICENSE)         |
-| `scripts/`                    | MIT     | [`scripts/LICENSE`](scripts/LICENSE)   |
+| Tree                                 | License                        |
+|--------------------------------------|--------------------------------|
+| `subtick/` — chain core (validator, executor, API) | **Proprietary, all rights reserved** ([LICENSE](LICENSE)) |
+| `sdk/js/` — `@subtick/sdk`           | MIT ([sdk/js/LICENSE](sdk/js/LICENSE))         |
+| `sdk/python/` — `subtick-sdk`        | MIT ([sdk/python/LICENSE](sdk/python/LICENSE)) |
+| `apps/game/`, `apps/agents/` — demos | MIT ([apps/game/LICENSE](apps/game/LICENSE), [apps/agents/LICENSE](apps/agents/LICENSE)) |
+| `scripts/` — testnet orchestration   | MIT ([scripts/LICENSE](scripts/LICENSE))       |
 
-Use it, fork it, ship it. Attribution is appreciated.
+The chain core (`subtick/`) is published for **inspection only** — you may
+read it, file issues, and submit pull requests, but you may not run, fork,
+copy, redistribute, or offer it as a service without prior written
+permission. The SDKs and demos are MIT so you can build on top of the
+public testnet freely.
+
+For commercial licensing of the chain core, contact the project owners.

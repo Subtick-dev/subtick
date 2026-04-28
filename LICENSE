@@ -1,21 +1,43 @@
-MIT License
+Subtick — All Rights Reserved
 
-Copyright (c) 2026 Subtick contributors
+Copyright (c) 2026 Subtick contributors. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This source code is made publicly available for inspection and reference only.
+It is NOT open source. It is NOT released under any open-source license.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Subdirectories of this repository carry their own LICENSE files and may be
+released under more permissive terms (for example, the SDKs in `sdk/` and the
+demos in `apps/` are released under the MIT License). The terms in this file
+apply to every file in this repository that is NOT covered by a more
+permissive LICENSE in a subdirectory — in particular, all source code under
+`subtick/` (the validator, executor, and API binary) is governed by these
+terms.
+
+Without prior written permission from the copyright holders, you MAY NOT:
+
+  - Copy, fork, modify, merge, publish, distribute, sublicense, or sell
+    this software, in whole or in part.
+  - Use this software, or any portion of it, in any product, service, or
+    system, whether commercial or non-commercial, public or private.
+  - Run this software in production, host it, or provide it as a service
+    (including any "Subtick-as-a-Service" or competing chain offering).
+  - Train machine-learning models on, or otherwise ingest into a model,
+    this source code.
+  - Remove or alter this notice or any copyright notice in the source.
+
+Permitted without prior permission:
+
+  - Reading the source code in this repository for personal study and for
+    evaluating Subtick.
+  - Filing issues or pull requests against this repository. By submitting a
+    contribution, you agree that the contribution is licensed back to the
+    copyright holders under these same terms.
+  - Linking to this repository.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY
+ARISING FROM THE USE OF, OR INABILITY TO USE, THIS SOFTWARE.
+
+For commercial licensing inquiries, contact the project owners.
