@@ -1,29 +1,78 @@
 # Subtick
 
-Subtick is a real-time execution network.
+Subtick executes transactions in ~130 ms — no blocks, no waiting.
 
-**No blocks. No waiting.**
-
-Send a transaction → it executes in ~130 ms.
-
-> **Live demo:** [https://subtick.dev/demo](https://subtick.dev/demo) — click the button, watch a real signed transfer execute end-to-end against a live network with the latency printed every time.
->
-> **API:** [https://subtick.dev](https://subtick.dev)
+**No blocks. No batching. No waiting.**
 
 ---
 
-## 30-second quickstart
+## Live Demo
+
+→ **[https://subtick.dev/demo](https://subtick.dev/demo)**
+
+Click **Send** → transaction executes in ~130 ms.
+
+---
+
+## Quickstart
 
 ```bash
 npm install @subtick/sdk
 ```
 
 ```js
+import { SubtickClient } from '@subtick/sdk';
+
+const c = new SubtickClient({ baseUrl: 'https://subtick.dev' });
+await c.health();
+// { status: 'ok', height: …, slot: …, account_count: 8 }
+```
+
+---
+
+## What it is
+
+- Real-time execution (~130 ms)
+- Signed transactions (Ed25519)
+- Live state via WebSocket
+
+It is **not** a token, a wallet, a DEX, or anything that promises money.
+
+---
+
+## API
+
+```
+https://subtick.dev
+```
+
+| Method | Path                 | Use                            |
+|--------|----------------------|--------------------------------|
+| GET    | `/health`            | liveness + chain status        |
+| POST   | `/v1/tx`             | submit signed transaction      |
+| GET    | `/v1/balance/:addr`  | balance                        |
+| GET    | `/v1/account/:addr`  | balance + nonce                |
+| WS     | `/v1/events`         | live execution stream          |
+
+Full reference: [`subtick/API.md`](subtick/API.md).
+
+---
+
+## SDKs
+
+- **JavaScript / TypeScript** — [`sdk/js/`](sdk/js/) · `npm install @subtick/sdk`
+- **Python 3.9+** — [`sdk/python/`](sdk/python/) · `pip install subtick-sdk`
+
+---
+
+## Full example — signed transfer
+
+```js
 import { SubtickClient, buildSignedTransfer, derivePublicKey } from '@subtick/sdk';
 import { readFileSync } from 'node:fs';
 import { randomBytes } from 'node:crypto';
 
-const seed = Buffer.from(readFileSync('user.key', 'utf8').trim(), 'hex');
+const seed   = Buffer.from(readFileSync('user.key', 'utf8').trim(), 'hex');
 const client = new SubtickClient({ baseUrl: 'https://subtick.dev' });
 
 const sender  = derivePublicKey(seed);
@@ -44,51 +93,6 @@ await client.sendTx(tx);
 
 Pre-funded test keys ship under `testnet_public/keys/user_{0..3}.key` —
 each holds 1 B units. Real Ed25519 signatures, real on-chain state, no mock.
-
----
-
-## What it is
-
-Subtick is real-time transaction execution.
-
-Every transaction is signed in the SDK, accepted by an HTTP API in single-digit milliseconds, and applied to live state in about 130 ms — visible to anyone subscribed to the WebSocket stream the moment it executes.
-
-It is built for AI agents (which need to pay each other in real time) and game economies (which generate one transaction per player action).
-
-It is **not** a token, a wallet, a DEX, or anything that promises money.
-
----
-
-## What it isn't
-
-- A blockchain (no blocks)
-- A token launch (no token)
-- A wallet (BYO Ed25519 key)
-- An exchange (no orderbook, no AMM)
-
----
-
-## API
-
-| Method | Path                 | Use                                  |
-|--------|----------------------|--------------------------------------|
-| GET    | `/health`            | liveness + chain status              |
-| POST   | `/v1/tx`             | submit hex-encoded signed tx         |
-| GET    | `/v1/balance/:addr`  | u128 balance as decimal string       |
-| GET    | `/v1/account/:addr`  | balance + nonce                      |
-| WS     | `/v1/events`         | live execution stream                |
-
-Full reference: [`subtick/API.md`](subtick/API.md).
-
----
-
-## SDKs
-
-- **JavaScript / TypeScript** — [`sdk/js/`](sdk/js/) · `npm install @subtick/sdk`
-- **Python 3.9+** — [`sdk/python/`](sdk/python/) · `pip install subtick-sdk`
-
-Both ship a transport client + canonical TX builder + Ed25519 signer.
-Wire format is identical across both.
 
 ---
 
@@ -128,7 +132,7 @@ See [`TESTNET.md` § Known limits](TESTNET.md#known-limits) for the full list.
 
 ```
 .
-├── subtick/         Rust validator + executor + API binary
+├── subtick/         validator + executor + API binary
 ├── sdk/js/          @subtick/sdk
 ├── sdk/python/      subtick-sdk
 ├── apps/game/       game-economy demo (real txs, terminal)
@@ -138,4 +142,8 @@ See [`TESTNET.md` § Known limits](TESTNET.md#known-limits) for the full list.
 
 ---
 
-Built in the open. PRs welcome. License: MIT.
+Try the demo → **[https://subtick.dev/demo](https://subtick.dev/demo)**
+
+If it feels fast, give it a ⭐
+
+License: MIT.
