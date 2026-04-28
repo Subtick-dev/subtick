@@ -167,3 +167,7 @@ chain — without prior written permission. The SDKs and demos are MIT so
 you can build on top of the public testnet freely.
 
 For commercial licensing of the chain core, contact the project owners.
+
+> Subtick is in a stabilization phase. Parts of the core will be opened
+> progressively under more permissive licenses as the architecture
+> stabilizes and the experiments settle.
