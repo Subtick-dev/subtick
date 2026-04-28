@@ -1,0 +1,22 @@
+{
+  "name": "@subtick/sdk",
+  "version": "0.1.0",
+  "description": "Subtick SDK — thin JS wrapper for the Subtick HTTP/WS API (Phase 1).",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "demo:send": "node examples/send_tx_loop.js",
+    "demo:events": "node examples/listen_events.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/subtick/sdk"
+}

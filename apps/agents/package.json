@@ -1,0 +1,16 @@
+{
+  "name": "@subtick/agents",
+  "version": "0.1.0",
+  "description": "Subtick Phase 2B — AI Agents MVP. In-memory machine economy that exercises the @subtick/sdk transport with a request/quote/pay/execute handshake.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node run.js",
+    "demo": "node run.js --duration 60",
+    "demo:verbose": "node run.js --duration 30 --verbose"
+  },
+  "license": "MIT"
+}

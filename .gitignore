@@ -1,0 +1,57 @@
+# Rust
+subtick/target/
+**/*.rs.bk
+**/Cargo.lock.tmp
+
+# Node
+node_modules/
+**/node_modules/
+**/.npm
+package-lock.json
+**/package-lock.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Testnet runtime artifacts
+testnet_public/
+demo_node/
+**/data_*/
+**/logs/
+
+# Local validator state from operator scripts
+*.pid
+*.log
+*.jsonl
+endurance_*.log
+
+# Internal-only docs (not for public repo)
+LAUNCH.md
+MASTER PLAN.md
+baseline_*.txt
+
+# Keys (operator-only — never commit)
+*.key
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.exe
+*.pdb
+*.dll
+*.so
+*.dylib
+
+# Claude Code session artifacts
+.claude/

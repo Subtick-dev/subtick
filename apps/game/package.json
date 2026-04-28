@@ -1,0 +1,15 @@
+{
+  "name": "@subtick/game",
+  "version": "0.1.0",
+  "description": "Subtick Phase 2A — Game Economy MVP. Off-chain ledger demo that exercises the @subtick/sdk transport against a running subtick api.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node run.js",
+    "demo": "node run.js --players 8 --tick-ms 1000 --duration 60"
+  },
+  "license": "MIT"
+}
