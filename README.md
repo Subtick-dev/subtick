@@ -154,16 +154,16 @@ Subtick uses an **open-core** model:
 
 | Tree                                 | License                        |
 |--------------------------------------|--------------------------------|
-| `subtick/` — chain core (validator, executor, API) | **Proprietary, all rights reserved** ([LICENSE](LICENSE)) |
+| `subtick/` — chain core (validator, executor, API) | **Source-available, proprietary** ([LICENSE](LICENSE)) |
 | `sdk/js/` — `@subtick/sdk`           | MIT ([sdk/js/LICENSE](sdk/js/LICENSE))         |
 | `sdk/python/` — `subtick-sdk`        | MIT ([sdk/python/LICENSE](sdk/python/LICENSE)) |
 | `apps/game/`, `apps/agents/` — demos | MIT ([apps/game/LICENSE](apps/game/LICENSE), [apps/agents/LICENSE](apps/agents/LICENSE)) |
 | `scripts/` — testnet orchestration   | MIT ([scripts/LICENSE](scripts/LICENSE))       |
 
-The chain core (`subtick/`) is published for **inspection only** — you may
-read it, file issues, and submit pull requests, but you may not run, fork,
-copy, redistribute, or offer it as a service without prior written
-permission. The SDKs and demos are MIT so you can build on top of the
-public testnet freely.
+The chain core (`subtick/`) is **source-available and proprietary**. You
+may view, read, and study the code, but you may not use, modify, or
+distribute it — and you may not run it as a service or offer a competing
+chain — without prior written permission. The SDKs and demos are MIT so
+you can build on top of the public testnet freely.
 
 For commercial licensing of the chain core, contact the project owners.
