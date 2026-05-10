@@ -69,6 +69,10 @@ export class SubtickClient {
    */
   async getBalance(address) {
     const res = await this._http('GET', `/v1/balance/${encodeURIComponent(address)}`);
+    // Pre-2026-05-01 servers returned 404 for never-touched accounts.
+    // New servers return 200 with `exists: false`. Honour both so the
+    // SDK's documented throw-on-not-found contract is preserved across
+    // the rollout without callers having to special-case versions.
     if (res.status === 404) throw new AccountNotFound(address);
     const body = await this._json(res);
     if (!res.ok) {
@@ -78,6 +82,7 @@ export class SubtickClient {
         body,
       });
     }
+    if (body.exists === false) throw new AccountNotFound(address);
     return body;
   }
 
@@ -99,6 +104,7 @@ export class SubtickClient {
         body,
       });
     }
+    if (body.exists === false) throw new AccountNotFound(address);
     return body;
   }
 

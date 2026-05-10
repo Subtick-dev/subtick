@@ -97,6 +97,10 @@ class SubtickClient:
     def get_balance(self, address: str) -> int:
         """Return the account balance as a Python int (lossless)."""
         res = self._http("GET", f"/v1/balance/{address}")
+        # Pre-2026-05-01 servers returned 404 for never-touched accounts.
+        # New servers return 200 with ``exists: false``. Honour both so the
+        # SDK's documented raise-on-not-found contract is preserved across
+        # the rollout without callers having to special-case versions.
         if res.status_code == 404:
             raise AccountNotFound(address)
         body = self._json(res)
@@ -107,6 +111,8 @@ class SubtickClient:
                 retryable=res.status_code >= 500,
                 body=body,
             )
+        if body.get("exists") is False:
+            raise AccountNotFound(address)
         return int(body["balance"])
 
     def get_account(self, address: str) -> Account:
@@ -122,6 +128,8 @@ class SubtickClient:
                 retryable=res.status_code >= 500,
                 body=body,
             )
+        if body.get("exists") is False:
+            raise AccountNotFound(address)
         return Account(
             address=body["address"],
             balance=int(body["balance"]),
